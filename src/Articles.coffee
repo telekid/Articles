@@ -2993,8 +2993,14 @@ articlize = (inputs...) ->
     "#{find(input)} #{input}"
   if inputs.length is 1 then out[0] else out 
 
+if window.module 
+  module.exports = {
+    find
+    articlize
+  }
 
-module.exports = {
-  find
-  articlize
+else
+  window.articles = {
+    find
+    articlize
 }
